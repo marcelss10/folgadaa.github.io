@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Convite para Sair</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    #convite {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.5s ease;
+    }
+    #sim {
+        background-color: #4CAF50;
+        color: white;
+    }
+    #nao {
+        background-color: #f44336;
+        color: white;
+    }
+    .mensagem {
+        margin-top: 20px;
+        background-color: #e0f7fa;
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+<div id="convite">
+    <h2>Aceita sair comigo?</h2>
+    <button id="sim">Sim</button>
+    <button id="nao">Não</button>
+</div>
+<div id="mensagem" class="mensagem" style="display:none;">
+    <h1>Olá, Folgadinhaaa!</h1>
+    <p>Eu só queria dizer o quanto você é Folgada, porem vc ja sabe ne HAHAHAHA.</p>
+    <p>Para mostrar um pouco do meu sentimento, gostaria que você ouvisse essa música que me faz pensar em você:</p>
+    <a href="https://www.youtube.com/watch?v=lyHNzNMSZyw" target="_blank">Clique aqui para ouvir</a>
+</div>
+
+<script>
+    document.getElementById('nao').onclick = function(event) {
+        var btn = event.target;
+        var x = Math.random() * 300 - 150; // Mover horizontalmente (-150 a 150 pixels)
+        var y = Math.random() * 300 - 150; // Mover verticalmente (-150 a 150 pixels)
+        btn.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+    };
+
+    document.getElementById('sim').onclick = function() {
+        // Remover a funcionalidade de mover do botão "Não"
+        document.getElementById('nao').onclick = null;
+        // Exibir a mensagem
+        document.getElementById('mensagem').style.display = 'block';
+    };
+</script>
+</body>
+</html>
